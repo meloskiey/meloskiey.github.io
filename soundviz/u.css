@@ -1,0 +1,15 @@
+html, body {
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+#audiofile {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
