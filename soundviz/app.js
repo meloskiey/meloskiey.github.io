@@ -1,5 +1,5 @@
 const fftStartingPoint = 0; 
-//whenever page is refreshed, new set of startColour and endColour appears
+//whenever page is refreshed, new set of startColour and endColour appears - colour is randomnised at the end of code
 const gradients = [
   {start: [16, 141, 199], end: [239, 142, 56]},
   {start: [247, 255, 0], end: [219, 54, 164]},
