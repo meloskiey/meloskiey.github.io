@@ -1,4 +1,4 @@
-const fftStartingPoint = 0; //Where we want to start at the FFT, I don't even know if this is a good idea.
+const fftStartingPoint = 0; 
 const gradients = [
   {start: [16, 141, 199], end: [239, 142, 56]},
   {start: [247, 255, 0], end: [219, 54, 164]},
