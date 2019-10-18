@@ -1,4 +1,5 @@
 const fftStartingPoint = 0; 
+//whenever page is refreshed, new set of startColour and endColour appears
 const gradients = [
   {start: [16, 141, 199], end: [239, 142, 56]},
   {start: [247, 255, 0], end: [219, 54, 164]},
@@ -25,12 +26,14 @@ function setup() {
     }
   });
   
+  //fft(Fast Fourier Transform) analyses the frequency of the soundwave
   fft = new p5.FFT(0.05);
   colorMode(RGB);
   startColor = color(0, 0, 0);
   endColor = color(0, 0, 0);
 }
 
+//to draw the ellipse 
 function draw() {
   background(0);
   translate(width / 2, height / 2);
@@ -45,11 +48,13 @@ function draw() {
   const spectrum = fft.analyze();
   const spectrumValues = [];
     
+  //this code is to create the soundwaves/spectrum
   for (let i = fftStartingPoint; i < ((TWO_PI) + fftStartingPoint)*100; i++) {
-    //Maybe take the average of all 3 for a line? someone help me do this better please!
     spectrumValues.push((spectrum[i] + spectrum[i + 1], spectrum[i + 2]));
   }
-    
+ 
+  
+  //this chunk of code is for the mapping and placement of the spectrum into the ellipse
   let count = 0;
   let angle = 0.0;
   let incrementOne = 0.0;
