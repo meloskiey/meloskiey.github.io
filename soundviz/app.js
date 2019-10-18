@@ -15,6 +15,7 @@ let rotateAngle = 0;
 let sound;
 let fft;
 
+//p5.js requires us to set up a canvas in order to "draw" in it
 function setup() {
   const cnv = createCanvas(600, 600);
   
@@ -57,9 +58,6 @@ function draw() {
   //this chunk of code is for the mapping and placement of the spectrum into the ellipse
   let count = 0;
   let angle = 0.0;
-  let incrementOne = 0.0;
-  let incrementTwo = 0.0;
-  let increment =  0.0128;
   let lerpy;
   
   for (let i = 0; i < TWO_PI; i+= 0.03) {
