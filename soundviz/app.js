@@ -27,11 +27,9 @@ function setup() {
     }
   });
   
-  //fft(Fast Fourier Transform) analyses the frequency of the soundwave
+  //fft(Fast Fourier Transform) analyses the frequency and amplitude of the soundwave
   fft = new p5.FFT(0.05);
-  colorMode(RGB);
-  startColor = color(0, 0, 0);
-  endColor = color(0, 0, 0);
+  
 }
 
 //to draw the ellipse 
@@ -60,16 +58,19 @@ function draw() {
   let angle = 0.0;
   let lerpy;
   
+  //this code is to size the elliptical spectrum
   for (let i = 0; i < TWO_PI; i+= 0.03) {
     const x = sin(i) * 50;
     const y = cos(i) * 50;
-    
+   
+   //this code is for the extent of the spectrum aka how far it stretches
     if (i < PI) {
       lerpy = lerpColor(startColor, endColor, 0.0128);
     } else {
       lerpy = lerpColor(endColor, startColor, 0.0128);
     }
     
+    //this code is to map the spectrum into the ellipse
     stroke(lerpy);
     push();
     translate(x, y);
