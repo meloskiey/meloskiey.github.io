@@ -29,7 +29,9 @@ function setup() {
   
   //fft(Fast Fourier Transform) analyses the frequency and amplitude of the soundwave
   fft = new p5.FFT(0.05);
-  
+  colorMode(RGB);
+  startColor = color(0, 0, 0);
+  endColor = color(0, 0, 0);
 }
 
 //to draw the ellipse 
